@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 36.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 36.5: ¡Los Cazadores de Errores de las Cuevas de Cristal!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas/curvas/loop, ladrillos acción rojo, amarillo, blanco, azul) y 10 iBricks por cada pareja.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Ups! ¿Algo Salió Mal? ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir la idea de que a veces los planes o las máquinas tienen "errores" (bugs) y hay que encontrarlos y arreglarlos (depurar).</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta si alguna vez un juguete no funcionó como esperaban o si un plan cambió a último momento.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, súper solucionadores del CODE SQUAD! ¿Alguna vez les ha pasado que quieren hacer algo, como armar un juguete, y ¡ups! ¿una pieza no encaja o algo no funciona bien? ¡A veces, hasta los mejores planes tienen pequeños problemitas o 'bichitos' escondidos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que ser un buen solucionador implica observar, encontrar el problema y pensar cómo arreglarlo.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Cuando algo no funciona, los genios como ustedes no se rinden! ¡Se convierten en detectives! Observan con atención, encuentran dónde está el 'bichito' o el error, ¡y piensan en una solución para arreglarlo! ¡Eso se llama depurar! ¡Vamos al Gimnasio Cerebral a entrenar nuestros ojos de detective para encontrar y arreglar problemas!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento preciso de secuencias para poder identificar luego cuándo algo se desvía del plan.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, quizás haciendo una pausa y preguntando "¿Qué paso sigue ahora?" para verificar la secuencia.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Bailemos siguiendo el plan! ¡Cada paso es importante! ¡Adelante, vuelta, salto! ¿Qué viene después? ¡Hay que estar atentos a la secuencia! ¡Así, si algo cambia, nos daremos cuenta rápido! ¡Música!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - ¡Obstáculos en la Cueva de Cristal! -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">💎 Actividad 3: ¡Cristales Bloqueados! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia de la entrega de cristales, el plan original y la aparición de un "error" o problema inesperado en la ruta.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia del Coding Express transportando cristales brillantes a través de unas cuevas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Misión ultra secreta! ¡Nuestro Coding Express está transportando unos cristales súper brillantes y mágicos a través de las Cuevas de Cristal! Deben llegar al Gran Depósito de Cristales al final de la cueva. ¡Tenemos un plan perfecto para la ruta!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el plan original (según nivel: ruta lineal o bucle con acciones). Pero ¡oh no! informa que puede haber un problema inesperado en la vía (un bloque caído, una señal equivocada). El reto es construir la ruta, probarla, encontrar el error y arreglarlo.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Este es el plan! El tren debe seguir la ruta que diseñaremos (lineal o en bucle), hacer sus señales (sonar, luz...) y llegar al Depósito de Cristales (hecho con bloques). ¡Parece fácil! ¡PERO ATENCIÓN! ¡Las cuevas son impredecibles! ¡Quizás una roca (un bloque gigante) se cayó en medio de la vía! ¡O quizás una señal se cambió sola y ahora le dice al tren que pare cuando no debe! Nuestro reto, Cazadores de Errores, es: **Primero**, construir la ruta como la planeamos. **Segundo**, probarla con el tren. **Tercero**, si algo sale mal, ¡ser detectives, encontrar el error (el 'bichito') y arreglarlo! **Cuarto**, ¡probar de nuevo hasta que el tren complete la misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos de Cazadores de Errores! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para construir la ruta, identificar y solucionar juntos los problemas (bugs).</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que encontrar y arreglar errores es más fácil y rápido cuando se hace en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Encontrar 'bichitos' escondidos en un plan requiere ojos de águila y mentes astutas! ¡Y dos Cazadores de Errores trabajando juntos pueden encontrar y aplastar cualquier 'bug' mucho más rápido! ¡Formen sus Equipos de Cazadores de Errores!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a preparar su "zona de cuevas" y a estar listos para construir la ruta planeada.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Cazadores? ¡Preparen su espacio para construir las Cuevas de Cristal! Necesitarán vías, bloques para decorar y marcar el depósito, los ladrillos de acción... ¡y su lupa de detective imaginaria! ¡Vamos a construir la ruta planeada!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Construye la Ruta... con un 'Bug'! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🐛 Actividad 5: ¡Armando la Cueva... y el Problema! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Construir la ruta planeada (lineal o bucle) y colocar los ladrillos de acción según el plan. El maestro (o los niños más adelante) introduce el "bug" sin que lo noten inicialmente (o se les dice que "algo podría estar mal").</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso 1: Construir la Ruta Base -->
+             <tr>
+                <td><strong>PASO 1 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Construye la Ruta Planeada!". Guía para construir la ruta según el nivel (lineal K1, bucle K2/K3) y colocar los ladrillos de acción como si todo fuera perfecto. Usar iBricks para Depósito de Cristales.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Manos a la obra, equipos! Construyan la ruta exacta que teníamos planeada para llevar los cristales. ¡Recuerden el orden de las acciones! (Repasa brevemente el plan K1/K2/K3). Coloquen las vías y los ladrillos de acción CORRECTOS en su lugar. ¡Y hagan el Depósito de Cristales al final con bloques!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Paso 2: Introducir el Bug (Maestro o niños) -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Plan K1: Sonido-Luz-Parada... ¿Seguro?". Plan: Vía recta, Amarillo->Blanco->Rojo->Depósito. **Bug Introducido:** Maestro coloca discretamente 1 iBrick bloqueando la vía DESPUÉS del ladrillo Amarillo.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Su plan era: Sonido (Amarillo), luego Luz (Blanco), y Parar (Rojo) en el Depósito. ¡Construyan eso! Pongan Amarillo, luego Blanco, luego Rojo cerca del depósito. (Mientras no miran, o abiertamente diciendo 'oh, creo que se cayó una roca'), coloca un bloque en la vía después del Amarillo. ¡Listos para probar... si la cueva nos deja!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Plan K2: Bucle Sonido-Luz... ¿Seguro?". Plan: Bucle simple, pasar por Amarillo->Blanco->Azul (Reversa) en cada vuelta. **Bug Introducido:** Maestro sustituye el ladrillo BLANCO por uno ROJO (Parar).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos K2! Su plan era un bucle que hiciera: Sonido (Amarillo), luego Luz (Blanco), luego Reversa (Azul). ¡Construyan el bucle y pongan los ladrillos en ese orden! (Mientras, cambia el Blanco por un Rojo). ¡Uy! ¿Están seguros de que pusieron los ladrillos correctos? ¡Parece que una señal de la cueva cambió! ¡Prepárense para probar!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Plan K3: Ruta Compleja... ¿Seguro?". Plan: Ruta con curva/desvío, secuencia Amarillo->Curva->Blanco->Azul(Reversa)->Rojo(Parar). **Bugs Introducidos:** Maestro coloca 1 iBrick bloqueando DESPUÉS de la curva Y sustituye el ladrillo AZUL por uno AMARILLO (Sonar).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! Su ruta era: Sonido (Amarillo), tomar la Curva, luego Luz (Blanco), luego Reversa (Azul) y Parar (Rojo) al final. ¡Construyan! (Mientras, coloca un bloque después de la curva y cambia el Azul por Amarillo). ¡Oh, oh! ¡Parece que esta cueva es traviesa! ¡Hay una roca inesperada Y creo que una señal de sonido se coló donde no debía! ¡Vamos a tener que ser buenos detectives al probar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡A la Caza del Error! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-debug')">
+        <div class="title">🐞 Actividad 6: ¡Prueba, Encuentra y Arregla! ⏰ Tiempo: 10 minutos</div>
+        <div class="subtitle">Objetivo: Realizar una prueba inicial, identificar el error (con ayuda si es necesario), corregirlo (quitar bloque/cambiar ladrillo) y volver a probar para verificar la solución.</div>
+    </div>
+    <div id="probando-debug" class="content">
+        <table>
+             <!-- Paso 1: Prueba Inicial y Detección del Error -->
+             <tr>
+                <td><strong>PASO 1 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 12** (K1), **13** (K2) o **14** (K3) - Parte A: "¡Prueba 1: Algo Falla!". Pide que prueben la ruta empujando el tren. Observar el fallo.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Cazadores de Errores! ¡Es hora de la primera prueba! Pongan el tren al inicio con sus cristales. ¡Empujón suave! ¡Observen con atención! ... ¡Oh, no! ¿Qué pasó? ¿Por qué no funcionó como planeamos? (K1: ¡Se chocó! K2: ¡Paró antes! K3: ¡Se chocó Y/O hizo un sonido raro!). ¡Hemos encontrado un 'bug', un error en la cueva!"
+                    </div>
+                </td>
+            </tr>
+             <!-- Paso 2: Debugging - Encontrar y Corregir -->
+             <tr>
+                 <td><strong>PASO 2 (4 minutos):</strong> Reproduce la **DIAPOSITIVA 12/13/14** - Parte B: "¡A Depurar! ¿Qué está Mal?". Guía la observación: "¿Ven algo bloqueando? (K1/K3). ¿Este ladrillo (Rojo K2, Amarillo K3) es el que planeamos poner ahí? ¿Cuál debería ir?". Ayuda a quitar el bloque o cambiar el ladrillo incorrecto por el correcto.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives, a investigar! Miren bien la vía donde el tren falló. ¿Hay algo que no debería estar ahí? (Señala el bloque K1/K3). ¡Una roca! ¡Hay que quitarla! // (Para K2/K3): Miren este ladrillo donde falló. ¿Era este (Rojo/Amarillo) el que dibujamos en el plan? ¿O era otro (Blanco/Azul)? ¡Ahá! ¡Esta señal está equivocada! ¡Cambiémosla por la correcta! ¡Vamos a arreglar el problema!"
+                    </div>
+                </td>
+            </tr>
+             <!-- Paso 3: Prueba Final - Verificar Solución -->
+             <tr>
+                 <td><strong>PASO 3 (3 minutos):</strong> Reproduce la **DIAPOSITIVA 12/13/14** - Parte C: "¡Prueba 2: Ruta Corregida!". Pide que vuelvan a probar la ruta con el error corregido. Observar si ahora funciona correctamente.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Muy bien, equipo! ¡Hemos arreglado el problema! ¡Quitaron la roca / Cambiaron la señal! ¡Ahora, la prueba final! ¡Tren al inicio de nuevo! ¡Empujón! ¡Crucen los dedos! Miren... ¿Funciona ahora? ¿Llega al final? ¿Hace las acciones correctas? ¡SÍIIIII! ¡Han cazado y eliminado el 'bug'! ¡Son expertos depuradores!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Cazadores de Errores Victoriosos! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar la habilidad de encontrar y corregir errores (depuración), reforzar que es una parte normal e importante del proceso de codificación/planificación.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por superar los obstáculos y entregar los cristales. Realiza preguntas sobre el proceso de depuración.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN CUMPLIDA, increíbles Cazadores de Errores del CODE SQUAD! ¡A pesar de las rocas caídas y las señales confusas de la cueva, encontraron los problemas, los arreglaron y lograron entregar los cristales brillantes! ¡Son geniales resolviendo problemas! Pensemos en esta aventura de depuración:
+1. ¿Qué pasó la primera vez que probamos el tren? (¡No funcionó! ¡Hubo un error/bug!)
+2. ¿Qué hicimos para arreglarlo? (¡Miramos bien! ¡Encontramos el problema! ¡Quitamos el bloque / Cambiamos el ladrillo!)
+3. ¿Funcionó mejor la segunda vez? (¡Sí!) ¿Es normal que a veces las cosas no salgan bien a la primera y tengamos que arreglarlas? (¡Claro que sí!)
+¡Hoy aprendimos algo súper importante! A veces, nuestros planes o códigos tienen pequeños 'bugs' o errores. ¡Pero lo importante es ser buenos detectives, encontrarlos y arreglarlos! ¡Eso se llama DEPURAR y es lo que hacen los mejores programadores y solucionadores de problemas del mundo! ¡Estoy muy orgulloso de ustedes! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
